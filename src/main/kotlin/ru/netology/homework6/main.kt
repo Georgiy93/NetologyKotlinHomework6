@@ -92,7 +92,6 @@ data class StickerAttachment(val sticker: Sticker) : Attachment {
 }
 
 
-
 data class Copyright(
     val id: Int = 0,
     val link: String = "",
@@ -185,7 +184,8 @@ fun main() {
             VideoAttachment(Video(id = 1, title = "SweetDreams", duration = 234))
         )
     )
-    val post3 = post.copy(text = "Работаем",
+    val post3 = post.copy(
+        text = "Работаем",
         attachments = arrayOf(
             PhotoAttachment(Photo(1, "Cat", 1024, 768)),
             DocAttachment(Doc(1, "Work", "https")),
@@ -206,8 +206,8 @@ fun main() {
             post.text + ", Индетификатор поста: " + post.id +
                     ", Индетификатор автора поста: " + post.ownerID +
                     ", $data " + "Количестов лайков: " + post.likes.count +
-                    " Вложения " +post.attachments.contentToString()  + "\n"
+                    " Вложения " + post.attachments.contentToString() + "\n"
         )
-        }
+    }
 
 }
